@@ -19,4 +19,14 @@ public class BookRepository {
         return null;
     }
 
+    public ArrayList<Book> findByTitle(String keyword){
+        ArrayList<Book> bookSimilarKeyword = new ArrayList<>();
+        for(Book book: books){
+            if(book.getTitle().toLowerCase().contains(keyword.toLowerCase())){
+                bookSimilarKeyword.add(book);
+            }
+        }
+        return bookSimilarKeyword;
+    }
+
 }
