@@ -9,4 +9,14 @@ public class BookRepository {
         books.add(book1);
     }
 
+    public Book findByIsbn(String isbn){
+        //Using a foreach loop
+        for (Book book: books){
+            if(book.getIsbn().equals(isbn)){
+                return book;
+            }
+        }
+        return null;
+    }
+
 }
