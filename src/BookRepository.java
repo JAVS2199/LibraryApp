@@ -5,7 +5,7 @@ public class BookRepository {
     private ArrayList<Book> books = new ArrayList<Book>();
 
     public BookRepository(){
-        Book book1 = new Book("83471","The dead of night", null, "S.K.", "Horror");
+        Book book1 = new Book("83471","The dead of night", null, "S.K.", "Horror", 100, 7);
         books.add(book1);
     }
 

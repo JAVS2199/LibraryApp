@@ -21,4 +21,25 @@ public class LibraryApp {
             System.out.println("1 book found: \n\tTile: "+book.getTitle());
         }
     }
+    public void checkOutBook(String isbn){
+        Book book = bookRepo.findByIsbn(isbn);
+        if(book != null){
+            book.checkOut();
+            System.out.println("Book checked out successfully");
+        }else{
+            System.out.println("Failed to check out book");
+            System.out.printf("Reason: there is no book with ISBN %s on record.\n ",isbn);
+        }
+    }
+
+    public void checkInBook(String isbn){
+        Book book = bookRepo.findByIsbn(isbn);
+        if(book != null){
+            book.checkIn();
+            System.out.println("Book checked in successfully");
+        }else{
+            System.out.println("Failed to check in book");
+            System.out.printf("Reason: there is no book with ISBN %s on record.\n ",isbn);
+        }
+    }
 }
