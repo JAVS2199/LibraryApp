@@ -24,8 +24,9 @@ public class LibraryApp {
     public void checkOutBook(String isbn){
         Book book = bookRepo.findByIsbn(isbn);
         if(book != null){
-            book.checkOut();
-            System.out.println("Book checked out successfully");
+            if (book.checkOut()){
+                System.out.println("Book checked out successfully");
+            }
         }else{
             System.out.println("Failed to check out book");
             System.out.printf("Reason: there is no book with ISBN %s on record.\n ",isbn);

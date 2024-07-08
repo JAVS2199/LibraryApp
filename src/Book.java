@@ -57,11 +57,19 @@ public class Book {
         this.genre = genre;
     }
 
-    public void checkOut(){
+    public Boolean checkOut(){
+        if(numCheckedOut>= quantity){
+            return false;
+        }
         numCheckedOut++;
+        return true;
     }
-    public void checkIn(){
+    public Boolean checkIn(){
+        if(numCheckedOut <= 0){
+            return false;
+        }
         numCheckedOut--;
+        return true;
     }
 
     public int getQuantity() {
